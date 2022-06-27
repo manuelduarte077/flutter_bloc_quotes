@@ -12,7 +12,7 @@ class QuotesBloc extends Bloc<QuotesEvent, QuotesState> {
   final QuotesRepository _repository;
 
   QuotesBloc(this._repository) : super(QuoteLoadingState()) {
-    on<QuotesEvent>((event, emit) async {
+    on<LoadQuotesEvent>((event, emit) async {
       emit(QuoteLoadingState());
       try {
         final model = await _repository.getQuote();
