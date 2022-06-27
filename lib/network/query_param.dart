@@ -5,5 +5,8 @@ class QP {
   ///for example https://example.com?key=value&key2=value2
   static Map<String, String> apiQP(
           {required String value, required String value2}) =>
-      {'key': value, 'key2': value2};
+      {
+        'key': value,
+        'key2': value2,
+      };
 }

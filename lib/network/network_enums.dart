@@ -9,13 +9,12 @@ enum CallBackParameterName {
   all,
 }
 
-extension CallbackParameterNameException on CallBackParameterName {
+extension CallbackParameterNameExtention on CallBackParameterName {
   dynamic getJson(json) {
-    if (json == null) {
-      switch (this) {
-        case CallBackParameterName.all:
-          return json;
-      }
+    if (json == null) return null;
+    switch (this) {
+      case CallBackParameterName.all:
+        return json;
     }
   }
 }
