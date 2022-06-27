@@ -12,6 +12,6 @@ QuoteModel _$QuoteModelFromJson(Map<String, dynamic> json) => QuoteModel(
       json['content'] as String,
       json['author'] as String,
       json['length'] as int,
-      json['dataAdded'] as String,
+      json['dateAdded'] as String,
       json['dateModified'] as String,
     );

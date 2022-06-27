@@ -10,11 +10,11 @@ class QuoteModel {
   final String content;
   final String author;
   final int length;
-  final String dataAdded;
+  final String dateAdded;
   final String dateModified;
 
   const QuoteModel(this.id, this.tags, this.content, this.author, this.length,
-      this.dataAdded, this.dateModified);
+      this.dateAdded, this.dateModified);
 
   factory QuoteModel.fromJson(Map<String, dynamic> json) =>
       _$QuoteModelFromJson(json);
