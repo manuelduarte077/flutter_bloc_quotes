@@ -11,7 +11,7 @@ class QuoteModel {
   final String author;
   final int length;
   final String dateAdded;
-  final String dateModified;
+    final String dateModified;
 
   const QuoteModel(this.id, this.tags, this.content, this.author, this.length,
       this.dateAdded, this.dateModified);

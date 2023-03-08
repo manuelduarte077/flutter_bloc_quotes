@@ -10,11 +10,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text('Quotes'),
-        centerTitle: true,
-      ),
       body: BlocProvider<QuotesBloc>(
         create: (context) =>
             QuotesBloc(RepositoryProvider.of<QuotesRepository>(context))
@@ -32,8 +27,8 @@ class HomeScreen extends StatelessWidget {
                 } else if (state is QuoteLoadState) {
                   return QuoteWidget(
                     model: state.model,
-                    onPressed: () =>
-                        context.read<QuotesBloc>().add(LoadQuotesEvent()),
+                    // onPressed: () =>
+                    //     context.read<QuotesBloc>().add(LoadQuotesEvent()),
                   );
                 }
                 return const CircularProgressIndicator.adaptive();
