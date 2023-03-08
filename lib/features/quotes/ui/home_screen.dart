@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_quotes/features/quotes/bloc/quotes_bloc.dart';
 import 'package:flutter_bloc_quotes/features/quotes/repository/quote_repository.dart';
 import 'package:flutter_bloc_quotes/features/quotes/ui/widgets/quote_widget.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,11 +10,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Quotes'),
-        toolbarOpacity: 0.8,
-        leading: const Icon(FontAwesomeIcons.quoteRight),
-      ),
       body: BlocProvider<QuotesBloc>(
         create: (context) =>
             QuotesBloc(RepositoryProvider.of<QuotesRepository>(context))
@@ -33,8 +27,8 @@ class HomeScreen extends StatelessWidget {
                 } else if (state is QuoteLoadState) {
                   return QuoteWidget(
                     model: state.model,
-                    onPressed: () =>
-                        context.read<QuotesBloc>().add(LoadQuotesEvent()),
+                    // onPressed: () =>
+                    //     context.read<QuotesBloc>().add(LoadQuotesEvent()),
                   );
                 }
                 return const CircularProgressIndicator.adaptive();
