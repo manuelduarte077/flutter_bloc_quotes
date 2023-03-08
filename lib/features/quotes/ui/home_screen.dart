@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_quotes/features/quotes/bloc/quotes_bloc.dart';
 import 'package:flutter_bloc_quotes/features/quotes/repository/quote_repository.dart';
 import 'package:flutter_bloc_quotes/features/quotes/ui/widgets/quote_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,9 +12,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: const Text('Quotes'),
-        centerTitle: true,
+        toolbarOpacity: 0.8,
+        leading: const Icon(FontAwesomeIcons.quoteRight),
       ),
       body: BlocProvider<QuotesBloc>(
         create: (context) =>
